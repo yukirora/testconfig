@@ -15,7 +15,7 @@ dns:
     fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
-    - { name: 'Trojan节点名称', type: trojan, server: azure.yutji.online, port: 443, password: yutingjiang, udp: true, skip-cert-verify: true }
+    - { name: 'Trojan节点名称', type: trojan, server: azure.yutji.online, port: 38742, password: yutingjiang, udp: true, skip-cert-verify: true }
 proxy-groups:
     - { name: 自建节点, type: select, proxies: [自动选择, 故障转移, 'Trojan节点名称'] }
     - { name: 自动选择, type: url-test, proxies: ['Trojan节点名称',], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
